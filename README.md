@@ -9,12 +9,10 @@ API escrita em Typescript, utilizando o framework NextJS, que implementa a bibli
 ## Estrutura
 
 - **src:** Pasta contendo arquivos de código fonte da aplicação
-  - **controllers:** Pasta contendo os controladores da aplicação, definindo métodos que serão utilizados nas rotas
-  - **db:** Definição simples de um database temporário utilizando o _singleton pattern_
+  - **pages:** Pasta contendo as rotas básicas do app. Cada arquivo representa uma possível rota no site
+  - **services:** Pasta contendo definição base do **axios**, responsável por fazer a conexão entre no app e nossa API
+  - **styles:** Pasta contendo o **CSS** para estilização das páginas
   - **types:** Pasta contendo definição de tipos da aplicação
-  - **routes:** Definição das rotas da api
-  - **server:** Definição do servidor da aplicação
-- **tests:** Pasta contendo testes da aplicação
 
 ## Setup
 
@@ -30,49 +28,35 @@ Duplique o arquivo `.env.example` e de o nome de `.env`. Nele, coloque as variá
 
 ## Modo de desenvolvimento
 
-Para iniciar a aplicação em modo de desenvolvimento, basta fazer a seguinte modificação no `.env`
+Para iniciar a aplicação em modo de desenvolvimento, execute a API segunindo as instruções em seu **README.md** e faça a seguinte modificação no `.env`
 
 ```env
-  NODE_ENV=development
+  NEXT_PUBLIC_API_URL=http://localhost:5000
 ```
 
-E executar o seguinte comando
+E execute o seguinte comando
 
 ```bash
   npm run dev
 ```
 
-A aplicação deverá iniciar na porta especificada no arquivo `.env`
+A aplicação deverá iniciar na porta **3000**. Basta acessa-la [aqui](http://localhost:3000)
 
 ## Modo de produção
 
-Para iniciar a aplicação em modo de produção, primeiro deve ser feita a seguinte modificação no `.env`
-
-```env
-  NODE_ENV=production
-```
-
-Após isso a aplicação deve ser compilada, a afim de obtermos uma versão em Javascript puro. Isso pode ser realizado por meio do seguinte comando
+Para iniciar a aplicação em modo de produção, primeiro deve ser feita um **build** dela com o seguinte comando.
 
 ```bash
   npm run build
 ```
 
-Por fim, basta executar o seguinte comando para iniciar a aplicação
+Após finalização do **build**, basta executar o app com o seguinte comando.
 
 ```bash
   npm start
 ```
 
-A aplicação deverá iniciar na porta especificada no arquivo `.env`
-
-## Rodando testes
-
-Para executar os testes, basta rodar o seguinte comando
-
-```bash
-  npm run test
-```
+A aplicação deverá iniciar na porta **3000**. Basta acessa-la [aqui](http://localhost:3000)
 
 ## Autor
 
